@@ -35,8 +35,8 @@ for data_dir in data_dir_list:
 
         # Transpose the data and convert the values to floats
         arguments = [float(row[0]) for row in data]
-        values = [[float(x) for x in row[1:]] for row in data]
-        #values = [[float(x) / 256 if i in [1, 2] else float(x) for i, x in enumerate(row[1:])] for row in data]
+        #values = [[float(x) for x in row[1:]] for row in data]
+        values = [[float(x) / 256 if i in [1, 2] else float(x) for i, x in enumerate(row[1:])] for row in data]
         values_T = list(map(list, zip(*values)))
 
         # Create a line plot for each value series
